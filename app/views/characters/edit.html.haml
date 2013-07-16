@@ -1,0 +1,10 @@
+%h1
+	Personage bewerken:
+	= @character.name
+
+%p
+	= link_to 'terug naar alle personages', characters_path
+
+= form_for @character do |f|
+	= f.text_field :name
+	= f.submit "Personage opslaan"

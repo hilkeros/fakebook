@@ -21,15 +21,17 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'inherited_resources'
+gem 'haml-rails', git: 'https://github.com/indirect/haml-rails.git'
 
 group :development do
-		gem 'rspec-rails', '2.0.1'
+		gem 'rspec-rails'
 	end
 	
 group :test do
-	gem 'rspec', '2.0.1'
-	gem 'webrat', '0.7.1'
-	gem 'factory_girl_rails', '1.0'
+	gem 'rspec'
+	gem 'webrat'
+	gem 'factory_girl_rails'
 end
 
 # To use ActiveModel has_secure_password

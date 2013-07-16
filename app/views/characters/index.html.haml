@@ -1,0 +1,11 @@
+%h1 Alle personages
+
+%p
+	= link_to 'Nieuw personage creëren', new_character_path
+
+- @characters.each do |character|
+	%ul
+		%li
+			= character.name
+			= link_to 'Bewerken', edit_character_path(character)
+			= link_to 'Verwijderen', character, confirm: 'Personage verwijderen?', method: :delete
