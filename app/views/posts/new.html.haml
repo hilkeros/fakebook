@@ -1,0 +1,15 @@
+%p
+	%ul
+		- @posts.each do |post|
+			%li
+				= post.body
+				= post.character.name
+
+
+= form_for @post do |f|
+	
+	= f.select :character_id, @characters.map {|r| [r.name, r.id]}
+	%br/
+	= f.text_area :body
+	%br/
+	= f.submit "Update"
