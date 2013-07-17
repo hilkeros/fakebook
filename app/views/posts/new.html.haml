@@ -8,7 +8,10 @@
 
 = form_for @post do |f|
 	
+	= f.label :character_id, 'Personage kiezen:'	
 	= f.select :character_id, @characters.map {|r| [r.name, r.id]}
+	%br/
+	= link_to 'Personages beheren', characters_path
 	%br/
 	= f.text_area :body
 	%br/
