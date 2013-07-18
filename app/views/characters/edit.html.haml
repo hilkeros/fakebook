@@ -1,10 +1,17 @@
-%h1
-	Personage bewerken:
-	= @character.name
+%h1 Personage bewerken
 
 %p
 	= link_to 'terug naar alle personages', characters_path
 
+/ - flash.each do |name, msg|
+/ 	= content_tag :div, msg, :id => "flash_#{name}", :class => "ui-body ui-body-e"
+
+
 = form_for @character do |f|
-	= f.text_field :name
-	= f.submit "Personage opslaan"
+	.ui-grid-c
+		.ui-block-a
+			= f.label :name, "Naam:"
+			= f.text_field :name
+	.ui-grid-c
+		.ui-block-a
+			= f.submit "Personage opslaan"

@@ -9,4 +9,8 @@ class PostsController < InheritedResources::Base
 	def create
     	create! { new_post_path }
     end
+
+    def destroy
+    	destroy! { new_post_path }
+    end
 end

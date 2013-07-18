@@ -6,6 +6,8 @@
 				%img{:source => '/assets/profile.jpeg'}
 				%h2= post.character.name
 				%p= post.body
+				%p{:class => 'ui-li-aside'}
+					=link_to 'Verwijderen', post, confirm: 'Post verwijderen?', method: :delete
 
 
 .update
