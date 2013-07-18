@@ -11,3 +11,17 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+background-color: #3B5998;
+}
+
+ .container {
+ 	max-width: 960px;
+ 	margin-left: auto;
+ 	margin-right: auto;	
+ }
+
+ a {
+ 	color: '#3B5998';
+ }

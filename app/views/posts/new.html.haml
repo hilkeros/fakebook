@@ -1,18 +1,28 @@
-%p
-	%ul
+%img{:source => 'http://amatorski.be/images/amatorski/photos/medium/2.jpg?1305282620'}
+.feed
+	%ul{:"data-role" => 'listview'}
 		- @posts.each do |post|
 			%li
-				= post.body
-				= post.character.name
+				%img{:source => '/assets/profile.jpeg'}
+				%h2= post.character.name
+				%p= post.body
 
 
-= form_for @post do |f|
+.update
+	%h2 Update toevoegen
+	= form_for @post do |f|
 	
-	= f.label :character_id, 'Personage kiezen:'	
-	= f.select :character_id, @characters.map {|r| [r.name, r.id]}
-	%br/
-	= link_to 'Personages beheren', characters_path
-	%br/
-	= f.text_area :body
-	%br/
-	= f.submit "Update"
+		.ui-grid-c
+			.ui-block-a
+				= f.label :character_id, 'Personage kiezen:'
+				%br/
+				= link_to 'Personages beheren', characters_path
+			.ui-block-b		
+				= f.select :character_id, @characters.map {|r| [r.name, r.id]}
+		
+		%br/
+		= f.text_area :body
+		%br/
+		.ui-grid-c
+			.ui-block-a
+				= f.submit "Update", :class => 'ui-btn-blue'
