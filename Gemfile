@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+
 gem 'rails', '3.2.8'
 
 # Bundle edge Rails instead:
@@ -32,6 +33,11 @@ group :test do
 	gem 'rspec'
 	gem 'webrat'
 	gem 'factory_girl_rails'
+end
+
+group :production do
+  gem 'pg', '0.15.1'
+  gem 'rails_12factor', '0.0.2'
 end
 
 # To use ActiveModel has_secure_password
