@@ -26,6 +26,7 @@ end
 gem 'jquery-rails'
 gem 'inherited_resources'
 gem 'haml-rails', git: 'https://github.com/indirect/haml-rails.git'
+gem 'devise'
 
 group :development do
 		gem 'rspec-rails'
