@@ -4,6 +4,11 @@ Fakebook::Application.routes.draw do
 
   resources :characters
   resources :posts
+  resources :users do
+    resources :stories
+  end
+
+  resources :stories
 
   root :to => 'posts#new'
   

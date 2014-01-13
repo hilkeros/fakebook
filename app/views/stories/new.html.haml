@@ -1,0 +1,36 @@
+
+%h1 Nieuw verhaal schrijven
+
+%p
+	door:
+	= @user.email
+
+.create_story
+	.ui-grid-a
+		.ui-block-a
+			.story_box
+			= form_for @story do |f|
+				= f.label :title, 'Titel:'
+				%br/
+				= f.text_field :title
+				%br/
+				= f.hidden_field :user_id, :value => @user.id
+
+				
+				.story_posts
+					%ul{:"data-role" => 'listview', :class => 'story_posts'}
+						%li.droppable
+							%h2 Sleep een status uit de rechterkolom hier naar toe
+
+				= f.submit "Opslaan"
+		.ui-block-b
+			.posts_box
+				%ul{:"data-role" => 'listview'}
+					- @posts.each do |post|
+						
+						.draggable
+							%li{:class => 'ui-li ui-li-static ui-btn-up-a ui-li-has-thumb ui-first-child'}
+	            
+								%img{:source => '/assets/images/profile.jpeg'}
+								%h2= post.character.name
+								%p= post.body

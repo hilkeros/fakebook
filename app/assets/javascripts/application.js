@@ -13,3 +13,20 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+$(function() {
+    $( ".draggable" ).draggable({
+  helper: function(e) {
+        return $('<div>').addClass('block').text( $(e.target).text() );
+    },
+    connectToSortable: ".story_posts"
+  });
+    $(".story_posts").sortable({
+    placeholder: 'block-placeholder',
+    update: function (event, ui) {
+        // turn the dragged item into a "block"
+        ui.item.addClass('block');
+    }
+  });
+});
+
+
